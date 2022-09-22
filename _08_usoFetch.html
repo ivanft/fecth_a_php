@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 08</title>
+    <script>
+        fetch('http://localhost/miapi/datos.php')
+        .then((respuesta)=>{
+            return respuesta.json();
+        }).then((respuesta) => {
+            document.getElementById("nombre").value = respuesta.name;
+            document.getElementById("apellidos").value = respuesta.lastname;
+        })
+    </script>
+</head>
+<body>
+    <div id="informacion">
+        <input type="text" id="nombre" value="Cargando...">
+        <input type="text" id="apellidos" value="Cargando...">
+    </div>
+</body>
+</html>
